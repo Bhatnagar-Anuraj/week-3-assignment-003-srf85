@@ -49,13 +49,7 @@ def create_building(width=4, height=8, depth=4, position=(0, 0, 0)):
     #move building to the ground plane.
 
     return building
-
-    # TODO: Implement this function.
-    #   1. Create a polyCube with the given width, height, and depth.
-    #   2. Move it so its base sits on the ground at 'position'.
-    #      Hint: offset Y by height / 2.0.
-    #   3. Return the object name.
-
+    
 
 def create_tree(trunk_radius=0.5, trunk_height=4, canopy_radius=2,
                 position=(0, 0, 0)):
@@ -84,13 +78,6 @@ def create_tree(trunk_radius=0.5, trunk_height=4, canopy_radius=2,
 
     return tree_group
                     
-    # TODO: Implement this function.
-    #   1. Create a polyCylinder for the trunk and position it.
-    #   2. Create a polySphere for the canopy, positioned on top of the trunk.
-    #   3. Group trunk and canopy together using cmds.group().
-    #   4. Move the group to 'position'.
-    #   5. Return the group name.
-
 
 def create_fence(length=10, height=1.5, post_count=6, position=(0, 0, 0)):
     """Create a simple fence made of posts and rails.
@@ -127,13 +114,6 @@ def create_fence(length=10, height=1.5, post_count=6, position=(0, 0, 0)):
 
     return fence_group
     
-    # TODO: Implement this function.
-    #   1. Calculate spacing between posts: length / (post_count - 1).
-    #   2. Loop to create 'post_count' thin, tall cubes as posts.
-    #   3. Create a long, thin cube as a horizontal rail connecting them.
-    #   4. Group everything and move to 'position'.
-    #   5. Return the group name.
-
 
 def create_lamp_post(pole_height=5, light_radius=0.5, position=(0, 0, 0)):
     """Create a street lamp using a cylinder pole and a sphere light.
@@ -159,11 +139,6 @@ def create_lamp_post(pole_height=5, light_radius=0.5, position=(0, 0, 0)):
     #create group for pole and light + move group to position.
 
     return lamp_group
-    
-    # TODO: Implement this function.
-    #   1. Create a thin polyCylinder for the pole.
-    #   2. Create a polySphere for the light, placed at the top of the pole.
-    #   3. Group them, move to 'position', and return the group name.
 
 
 def place_in_circle(create_func, count=8, radius=10, center=(0, 0, 0),
@@ -203,12 +178,3 @@ def place_in_circle(create_func, count=8, radius=10, center=(0, 0, 0),
     # create loop for even distribution + calculate position using math
 
     return results
-    # TODO: Implement this function.
-    #   1. Import the math module (at the top of the file or here).
-    #   2. Loop 'count' times. For each iteration:
-    #       a. Calculate the angle: angle = 2 * math.pi * i / count
-    #       b. Calculate x = center[0] + radius * math.cos(angle)
-    #       c. Calculate z = center[2] + radius * math.sin(angle)
-    #       d. Call create_func(position=(x, center[1], z), **kwargs)
-    #       e. Append the returned name to a results list.
-    #   3. Return the results list.
