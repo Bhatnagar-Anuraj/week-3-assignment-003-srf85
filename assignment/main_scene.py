@@ -59,7 +59,7 @@ sf.place_in_circle(sf.create_tree, count=8, radius=25)
 sf.create_lamp_post(position=(0, 0, 0))
 #create lamp post in the center the circle.
 
-sf.create_fence(length=10, post_count=5, position=(-6, 0, -2)
+sf.create_fence(length=10, post_count=5, position=(-6, 0, -2))
 #create fence in between building and lamp posts.
 
 # ---------------------------------------------------------------------------
