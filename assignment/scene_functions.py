@@ -75,7 +75,7 @@ def create_tree(trunk_radius=0.5, trunk_height=4, canopy_radius=2,
     #create tree trunk with poly cylinder + move tree trunk to ground level
 
     canopy = cmds.polySphere(r=canopy_radius)[0]
-    cmds.move(0, truck_height + canopy_radius, 0, canopy)
+    cmds.move(0, trunk_height + canopy_radius, 0, canopy)
     #create tree canopy with poly sphere + move to the height of the trunk
 
     tree_group = cmds.group(trunk, canopy)
@@ -117,7 +117,7 @@ def create_fence(length=10, height=1.5, post_count=6, position=(0, 0, 0)):
     # loop for the creation of the posts + defining location.
 
     rail = cmds.polyCube(w=length, h=0.2, d=0.2)[0]
-    cmds.move(length / 2.0, height = 0.75, 0, rail)
+    cmds.move(length / 2.0, height * 0.75, 0, rail)
     parts.append(rail)
     # create the railing + defining location.
 
@@ -187,20 +187,20 @@ def place_in_circle(create_func, count=8, radius=10, center=(0, 0, 0),
         list: A list of object/group names created by create_func.
     """
     results = []
-
+                         
+    group = cmds.group(empty=True, name="circle_group")
+    # create group for objects in the circle
+                         
     for i in range(count):
         angle = 2 * math.pi * i / count
 
         x = center[0] + radius * math.cos(angle)
         z = center[2] + radius * math.sin(angle)
 
-        obj = create_func(position=(z, center[1], z), **kwargs)
+        obj = create_func(position=(x, center[1], z), **kwargs)
         cmds.parent(obj, group)
         results.append(obj)
     # create loop for even distribution + calculate position using math
-
-    group = cmds.group(empty=true, name="circle_group")
-    # create group for objects in the circle
 
     return results
     # TODO: Implement this function.
