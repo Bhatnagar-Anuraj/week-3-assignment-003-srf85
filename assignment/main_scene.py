@@ -30,26 +30,37 @@ import scene_functions as sf
 # ---------------------------------------------------------------------------
 cmds.file(new=True, force=True)
 
-# Create a ground plane.
 ground = cmds.polyPlane(name="ground", width=60, height=60,
                         subdivisionsX=1, subdivisionsY=1)[0]
+# Create a ground plane.
 
-# ---------------------------------------------------------------------------
-# TODO: Build your scene below by calling functions from scene_functions.
-#
-# Example calls (uncomment and modify once your functions are implemented):
-#
-#   sf.create_building(width=5, height=10, depth=5, position=(-10, 0, 8))
-#   sf.create_tree(position=(3, 0, -5))
-#   sf.create_fence(length=12, post_count=7, position=(-6, 0, -3))
-#   sf.create_lamp_post(position=(8, 0, 2))
-#
-#   # Place 8 trees in a circle of radius 15:
-#   sf.place_in_circle(sf.create_tree, count=8, radius=15)
-#
-# Remember: call each function at least once, and aim for 15+ objects.
-# ---------------------------------------------------------------------------
+sf.create_building(width=5, height=10, depth=5, position=(-10, 0, -12))
+sf.create_building(width=7, height=5, depth=7, position=(-15, 0, -10))
+sf.create_building(width=5, height=3, depth=5, position=(-18, 0, -6))
+sf.create_building(width=3, height=15, depth=3, position=(-9, 0, -5))
+sf.create_building(width=5, height=9, depth=5, position=(-3, 0, -1))
+sf.create_building(width=5, height=11, depth=5, position=(-13, 0, -5))
+sf.create_building(width=6, height=6, depth=6, position=(-10, 0, -12))
+#create seven buildings in the distance/ varying sizes.
 
+sf.create_tree(position=(-13, 0, -9))
+sf.create_tree(position=(-10, 0, -5))
+sf.create_tree(position=(-8, 0, -12))
+sf.create_tree(position=(-13, 0, -8))
+sf.create_tree(position=(-11, 0, -10))
+#create five trees in between building in the distance.
+
+sf.place_in_circle(sf.create_lamp_post, count=10, radius=20)
+#Place 10 lamp posts in a circle of radius 20.
+
+sf.place_in_circle(sf.create_tree, count=8, radius=25)
+#Place 8 trees in a circle of radius 25.
+
+sf.create_lamp_post(position=(0, 0, 0))
+#create lamp post in the center the circle.
+
+sf.create_fence(length=10, post_count=5, position=(-6, 0, -2
+#create fence in between building and lamp posts.
 
 # ---------------------------------------------------------------------------
 # Final viewport framing (do not remove).
